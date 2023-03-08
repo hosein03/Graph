@@ -31,13 +31,17 @@ class Graph:
 
     def AdjacentVertices(self, G, v):
         text = []
-        for i in self.edges:
-            if i[0] == v:
-                text.append(i[1])
+        if v in self.G:
+            for i in self.edges:
+                if i[0] == v:
+                    text.append(i[1])
         
-        print("the adjucent vertices of " + str(v) + " are: ")
-        for a in text:
-            print(a)
+            print("the adjucent vertices of " + str(v) + " are: ")
+            for a in text:
+                print(a)
+        
+        elif v not in self.G:
+            print(str(v) + " is not a vertex of " + G)
 
     def ColorVertex(self, G, v):
         if v in self.G:
